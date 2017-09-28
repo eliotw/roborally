@@ -76,6 +76,11 @@ class @Tile
 
     @addItem('wall', direction)
 
+  addCheckpoint: (number) ->
+    @checkpoint = number
+    @finish = true
+    @repair = true
+
   addStart: (number) ->
     @start = number
 

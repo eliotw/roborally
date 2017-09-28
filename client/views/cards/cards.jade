@@ -35,11 +35,8 @@ template(name="cards")
       .option-cards
         h6
           | Option cards
-        if showStandardLaserOption
-          .option-card.laserOptionBtn(data-option='standard-laser')
-            | Standard Laser
         each activeOptionCards
-          .option-card(title=desc data-option=key class=css_class)
+          .option-card(title=desc)
             = name
     if showPlayButton
       if poweredDown
@@ -47,10 +44,9 @@ template(name="cards")
         | &nbsp;
         a.btn.btn-success.playBtn play cards
       else
-        if showPowerDownButton
-          a.btn.powerBtn(class= ownPowerStateStyle, data-tooltip-direction='w' data-tooltip="A player with a damaged robot may choose to power down. A power down announced this turn takes effect on the next turn. At the beginning of the turn when your robot powers down, all your damage is removed. You can't play any cards while powered down.")
-            | #{ownPowerStateName}
-          | &nbsp;
+        a.btn.powerBtn(class= ownPowerStateStyle, data-tooltip-direction='w' data-tooltip="A player with a damaged robot may choose to power down. A power down announced this turn takes effect on the next turn. At the beginning of the turn when your robot powers down, all your damage is removed. You can't play any cards while powered down.")
+          | #{ownPowerStateName}
+        | &nbsp;
         a.btn.btn-success.playBtn.disabled play cards
   else
     with player
@@ -92,11 +88,8 @@ template(name="playerStatus")
     .option-cards
       h6
         | Option cards
-      if showStandardLaserOption
-        .option-card.laserOptionBtn(data-option='standard-laser')
-          | Standard Laser
       each activeOptionCards
-        .option-card(title=desc data-option=key class=css_class)
+        .option-card(title=desc)
           = name
 
 
